@@ -7,5 +7,6 @@
 // install node/npm
 // install inquirer for user prompts
 // install jest for test classes
+// install fs for file creation
 
 
