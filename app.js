@@ -5,6 +5,15 @@
 // after each team member creation, ask if team is been complete
     // if true, create html file; if false, repeat team prompts
 
+// The app must generate a team.html page in the output directory, that displays a nicely formatted team roster.
+// Each team member should display the following in no particular order:
+// Name
+// Role
+// ID
+// Role - specific property(School, link to GitHub profile, or office number)
+
+/******/
+
 // install node/npm
 // install jest for test classes
 // call inquirer for user prompts
