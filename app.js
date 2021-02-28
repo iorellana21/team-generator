@@ -22,4 +22,16 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// function for manager prompts
 
+
+// function to build out team
+
+
+// function for engineer info
+
+
+// function for intern info
+
+
+// function to create html file when team is complete
