@@ -16,12 +16,18 @@
 
 // install node/npm
 // install jest for test classes
-// call inquirer for user prompts
-// call fs for file creation
 
+// call inquirer for user prompts
 const inquirer = require('inquirer');
+// call fs for file creation
 const fs = require('fs');
 
+// call all js files in lib folder
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/employee');
+const Intern = require('./lib/intern');
+
+// array to populate with team members
 const team = [];
 
 // function for manager prompts - also call team function
@@ -57,7 +63,9 @@ const managerInfo = function () {
         .then(response => {
             console.log(response);
 
-            const manager = new 
+            const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber);
+            team.push(manager);
+            console.log(team);
 
             buildTeam();
         });
@@ -125,6 +133,10 @@ var engineerInfo = function () {
     ])
         .then(response => {
             console.log(response);
+            const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerRole, response.engineerGitHub);
+            team.push(engineer);
+            console.log(team);
+
             buildTeam();
         });
 }
@@ -146,7 +158,7 @@ var internInfo = function () {
         {
             type: 'input',
             message: 'Enter interns email:',
-            name: 'iternEmail'
+            name: 'internEmail'
         },
         {
             type: 'input',
@@ -156,11 +168,15 @@ var internInfo = function () {
     ])
         .then(response => {
             console.log(response);
+            const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
+            team.push(intern);
+            console.log(team);
+
             buildTeam();
         });
 }
 
 // function to create html file when team is complete
 var createTeam = function () {
-    console.log("team");
+    console.log(team);
 }
