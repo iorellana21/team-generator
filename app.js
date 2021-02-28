@@ -26,6 +26,7 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/employee');
 const Intern = require('./lib/intern');
+const render = require('./lib/renderTeam');
 
 // array to populate with team members
 const team = [];
@@ -69,8 +70,7 @@ const managerInfo = function () {
 
             buildTeam();
         });
-}
-managerInfo();
+};
 
 // function to create team or stop team generation and create html fil
 var buildTeam = function () {
@@ -99,7 +99,7 @@ var buildTeam = function () {
                 createTeam();
             }
         });
-}
+};
 
 // function for engineer info
 var engineerInfo = function () {
@@ -139,7 +139,7 @@ var engineerInfo = function () {
 
             buildTeam();
         });
-}
+};
 
 // function for intern info
 var internInfo = function () {
@@ -174,9 +174,21 @@ var internInfo = function () {
 
             buildTeam();
         });
-}
+};
 
 // function to create html file when team is complete
 var createTeam = function () {
     console.log(team);
-}
+
+    fs.writeFile(
+        __dirname + '/output/team.html', render(team),
+        function(err){
+            if(err){
+                return console.error(err);
+            }
+            console.log("team page has been created");
+        }
+    );
+};
+
+managerInfo();

@@ -13,7 +13,7 @@ describe("Engineer", () => {
 
     describe("Engineer info", () => {
         it("should return role of engineer", () => {
-            const role = "Senior Engineer";
+            const role = "Engineer";
 
             const obj = new Engineer();
 
