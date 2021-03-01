@@ -24,7 +24,7 @@ const fs = require('fs');
 
 // call all js files in lib folder
 const Manager = require('./lib/manager');
-const Engineer = require('./lib/employee');
+const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const renderTeam = require('./lib/renderTeam');
 
@@ -64,7 +64,6 @@ const managerInfo = function () {
         .then(response => {
             const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber);
             team.push(manager);
-            console.log(team);
 
             buildTeam();
         });
@@ -127,7 +126,6 @@ var engineerInfo = function () {
         .then(response => {
             const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGitHub);
             team.push(engineer);
-            console.log(team);
 
             buildTeam();
         });
@@ -161,7 +159,6 @@ var internInfo = function () {
         .then(response => {
             const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
             team.push(intern);
-            console.log(team);
 
             buildTeam();
         });
