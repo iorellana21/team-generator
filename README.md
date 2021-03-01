@@ -17,7 +17,7 @@ The software team generator app is intended to be used for project managers to h
 * When all prompts are answers, and team has been built, user selects 'Team is Complete' to have team page generated.
 ---
 ## Demo
-![demo](demo in gif)
+![demo](./asset/team-generator-demo.gif)
 
 ---
 ## Credits
