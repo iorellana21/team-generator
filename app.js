@@ -42,7 +42,7 @@ const managerInfo = function () {
         },
         {
             type: 'input',
-            message: 'Lets start with you! What is your name?',
+            message: 'Lets start with the manager! What is your name?',
             name: 'managerName'
         },
         {
@@ -62,8 +62,6 @@ const managerInfo = function () {
         }
     ])
         .then(response => {
-            console.log(response);
-
             const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber);
             team.push(manager);
             console.log(team);
@@ -87,7 +85,7 @@ var buildTeam = function () {
         }
     ])
         .then(response => {
-            console.log(response);
+            console.log(team);
 
             if (response.team === 'Engineer') {
                 engineerInfo();
@@ -127,8 +125,7 @@ var engineerInfo = function () {
         }
     ])
         .then(response => {
-            console.log(response);
-            const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerRole, response.engineerGitHub);
+            const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGitHub);
             team.push(engineer);
             console.log(team);
 
@@ -162,7 +159,6 @@ var internInfo = function () {
         }
     ])
         .then(response => {
-            console.log(response);
             const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
             team.push(intern);
             console.log(team);

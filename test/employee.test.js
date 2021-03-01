@@ -35,12 +35,5 @@ describe("Employee", () => {
             expect(obj.getEmail()).toEqual(email);
         });
 
-        it("should return role of employee", () => {
-            const role = "employee";
-
-            const obj = new Employee("Sabrina", 201, "fishchz@gmail.com");
-
-            expect(obj.getRole()).toEqual(role);
-        });
     });
 });
