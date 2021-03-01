@@ -26,7 +26,7 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/employee');
 const Intern = require('./lib/intern');
-const render = require('./lib/renderTeam');
+const renderTeam = require('./lib/renderTeam');
 
 // array to populate with team members
 const team = [];
@@ -122,11 +122,6 @@ var engineerInfo = function () {
         },
         {
             type: 'input',
-            message: 'Enter engineers role:',
-            name: 'engineerRole'
-        },
-        {
-            type: 'input',
             message: 'Enter engineers GitHub username:',
             name: 'engineerGitHub'
         }
@@ -181,7 +176,7 @@ var createTeam = function () {
     console.log(team);
 
     fs.writeFile(
-        __dirname + '/output/team.html', render(team),
+        __dirname + '/output/team.html', renderTeam(team),
         function(err){
             if(err){
                 return console.error(err);

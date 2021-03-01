@@ -21,11 +21,11 @@ describe("Intern", () => {
         });
 
         it("should return school of intern", () => {
-            const school = "Ramapo";
+            const schoolName = "Ramapo";
 
-            const obj = new Intern();
+            const obj = new Intern("Sabrina", 1, "test@email.com", schoolName);
 
-            expect(obj.getSchool()).toEqual(school);
+            expect(obj.school).toEqual(schoolName);
         });
     });
 });

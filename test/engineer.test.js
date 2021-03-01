@@ -23,9 +23,9 @@ describe("Engineer", () => {
         it("should return gitHub username of engineer", () => {
             const username = "gitHubName";
 
-            const obj = new Engineer();
+            const obj = new Engineer("Ivan", 1, "test@gmail.com", username);
 
-            expect(obj.getGitHub()).toEqual(username);
+            expect(obj.gitHub).toEqual(username);
         });
     });
 });

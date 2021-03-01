@@ -21,11 +21,11 @@ describe("Manager", () => {
         });
 
         it("should return office number of manager", () => {
-            const officeNumber = 201;
+            const number = 201;
 
-            const obj = new Manager();
+            const obj = new Manager("Sabrina", 1, "manager@gmail.com", number);
 
-            expect(obj.getOfficeNumber()).toEqual(officeNumber);
+            expect(obj.officeNumber).toEqual(number);
         });
     });
 });
