@@ -166,8 +166,6 @@ var internInfo = function () {
 
 // function to create html file when team is complete
 var createTeam = function () {
-    console.log(team);
-
     fs.writeFile(
         __dirname + '/output/team.html', renderTeam(team),
         function(err){
